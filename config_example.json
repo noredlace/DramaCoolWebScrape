@@ -1,0 +1,6 @@
+//RENAME TO config.json for actual use
+{
+    "URLStart": ["https://www3.dramacool.movie/2-days-amp-1-night-episode-","https://www3.dramacool.movie/2-days-1-night-episode-"],
+    "URLEnd": [".html",".html"],
+    "LoopStartEnd": [1,290]
+}

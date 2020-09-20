@@ -1,0 +1,11 @@
+#THIS IS AN EXAMPLE. REFER TO README FOR DIRECTIONS ON HOW TO GENERATE YOUR OWN COOKIES FILE
+# HTTP Cookie File downloaded with cookies.txt by Genuinous @genuinous
+# This file can be used by wget, curl, aria2c and other standard compliant tools.
+# Usage Examples:
+#   1) wget -x --load-cookies cookies.txt "{URL}"
+#   2) curl --cookie cookies.txt "{URL}"
+#   3) aria2c --load-cookies cookies.txt "{URL}"
+#
+.{domain}.{suffix}	TRUE	/	TRUE	1603228372	__cfduid	{guid}
+{cname}.{domain}.{suffix}	FALSE	/	FALSE	0	{domain}	{uid}
+{cname}.{domain}.{suffix}	FALSE	/	FALSE	1632258801	auth	{guid}

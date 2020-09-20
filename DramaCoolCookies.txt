@@ -1,10 +1,10 @@
 # HTTP Cookie File downloaded with cookies.txt by Genuinous @genuinous
 # This file can be used by wget, curl, aria2c and other standard compliant tools.
 # Usage Examples:
-#   1) wget -x --load-cookies cookies.txt "https://www3.dramacool.movie/1-night-2-days-s04-episode-1.html"
-#   2) curl --cookie cookies.txt "https://www3.dramacool.movie/1-night-2-days-s04-episode-1.html"
-#   3) aria2c --load-cookies cookies.txt "https://www3.dramacool.movie/1-night-2-days-s04-episode-1.html"
+#   1) wget -x --load-cookies cookies.txt "https://www3.dramacool.movie/2-days-amp-1-night-episode-1.html"
+#   2) curl --cookie cookies.txt "https://www3.dramacool.movie/2-days-amp-1-night-episode-1.html"
+#   3) aria2c --load-cookies cookies.txt "https://www3.dramacool.movie/2-days-amp-1-night-episode-1.html"
 #
-www3.dramacool.movie	FALSE	/	FALSE	0	dramacool	jaf50mkjel30igacihra4fs7i5
-.dramacool.movie	TRUE	/	TRUE	1601245424	__cfduid	de7a5a23023da5b15f86c9cb44c2f4ae41598653447
-www3.dramacool.movie	FALSE	/	FALSE	1600715297	auth	M9mK5yfIfkCzAfPMkyGgO3g%2F3EM20c%2Fl3hldPoWRIUpZIBvjfeGiHkW%2B4WS9avAz0JLwwT31812FIMoPPKDo3w%3D%3D
+.dramacool.movie	TRUE	/	TRUE	1603228372	__cfduid	d2c4103f7b6b3d2d63809ef539705d0561600636371
+www3.dramacool.movie	FALSE	/	FALSE	0	dramacool	tmm8c2540nt9chm76pjmrbslc1
+www3.dramacool.movie	FALSE	/	FALSE	1632258801	auth	G%2BmjFvorJ9jIQn1zaTelK%2BmJvFetkmkvhbghthsSdgQgs8qhI2KcD%2F1F2q7aq3OKp2x2DKglB8TEdQSYzRr0Bw%3D%3D
