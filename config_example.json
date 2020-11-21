@@ -2,5 +2,10 @@
 {
     "URLStart": ["https://www.domain.suffix/episode-","https://www.domain.suffix/alt-episode-"],
     "URLEnd": [".html",".html"],
-    "LoopStartEnd": [1,50]
+    "LoopStartEnd": [1,50],
+    "OutputURLName": "URLList.txt",
+    "DownloadPath": "Downloads/",
+    "DownloadInPython": true,
+    "ThreadNum": 8,
+    "LoggerFile": "DramaScrapeLogs.txt"
 }
