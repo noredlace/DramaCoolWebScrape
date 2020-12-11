@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup
 import requests
 import re
 import urllib.request
@@ -6,23 +5,14 @@ import sys
 import os
 import shutil
 import json
+import time
+import http.cookiejar as cookielib
+from bs4 import BeautifulSoup
 from multiprocessing.pool import ThreadPool
 from datetime import datetime
 
-def parseCookieFile(cookiefile):
-    """Parse a cookies.txt file and return a dictionary of key value pairs
-    compatible with requests."""
-
-    cookies = {}
-    with open (cookiefile, 'r') as fp:
-        for line in fp:
-            if not re.match(r'^\#', line):
-                lineFields = line.strip().split('\t')
-                cookies[lineFields[5]] = lineFields[6]
-    return cookies
-
 def download_url(url):
-  print("downloading: ",url)
+  # print("downloading: ",url)
   # assumes that the last segment after the / represents the file name
   # if url is abc/xyz/file.txt, the file name will be file.txt
   file_name_start_pos = url.rfind("dramacool)") + 10
@@ -31,8 +21,25 @@ def download_url(url):
   r = requests.get(url, stream=True)
   if r.status_code == 200:
     with open(downloadPath+file_name, 'wb') as f:
-      for data in r:
-        f.write(data)
+      #for data in r:
+      #  f.write(data)
+        #print ("\rDownloading %s" % file_name)
+        response = requests.get(url, stream=True)
+        total_length = response.headers.get('content-length')
+
+        if total_length is None: # no content length header
+            f.write(response.content)
+        else:
+            dl = 0
+            total_length = int(total_length)
+            for data in response.iter_content(chunk_size=4096):
+                #update download status every 5 seconds
+                #time.sleep(5)
+
+                dl += len(data)
+                f.write(data)
+                done = int(50 * dl / total_length)
+                print("\r%s[%s%s]" % (file_name,'=' * done, ' ' * (50-done)))
   return url
 
 #Load JSON for Variables
@@ -86,23 +93,26 @@ if(os.path.exists(downloadPath) and not os.path.exists(downloadPath + loggerFile
     sys.exit()
 
 #Start Code
+f = open(outputURLList,'w')
 try:
-    cookies = parseCookieFile('DramaCoolCookies.txt')
+    cookies = cookielib.MozillaCookieJar()
+    cookies.load(filename='DramaCoolCookies.txt')
+
     url = ""
-    f = open(outputURLList,'w')
 
     for i in range(start,end):
         #Debug Print just to keep track during Compilation
-        print(i)
+        #print(i)
 
         urlArray = []
-        
+
         for k in range(1,len(URLStart)+1):
             urlArray.append(URLStart[k-1]+str(i)+URLEnd[k-1])
 
         #In Cases where we have multiple base URLs for a show, let's loop through it and exit if we get a valid link
         for url in urlArray:
-            r = requests.get(url, cookies=cookies)
+            #print(url)
+            r = requests.get(url,cookies=cookies)
 
             if(r.status_code == 200):
                 break
@@ -140,7 +150,7 @@ if(downloadInPython):
 
     #Print Results
     for r in results:
-        print(r)
+        #print(r)
         
         #Write the Finished HTTP URL's to finished Download File
         with open(downloadPath + loggerFile,'a') as finished_urls:
