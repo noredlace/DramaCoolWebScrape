@@ -1,11 +1,11 @@
 # DramaCoolWebScrape
 
-Basic Functionality to Extract VOD Download Links on DramaCool
+Basic Functionality to Extract VOD Download Links on DramaCool. You'll need an account on the Site to have the Download Links show.
 
-Cookies.text is accessed from Logging into Site and generating the Cookies.TXT Chrome Extension
+Use the Chrome Extension GetCookies.txt to Generate your Cookie File which you will use here.
 
-config.json is used to pass the URLs (as an array if there are multiple URLs to support) and Loop Start/End
+Config.json is used to pass the URLs (as an array if there are multiple URLs to support) and Loop Start/End
 
-Downloads with threads for each file in Python.
+Downloads with threads for each file in Python or don't and have it generate the Download Links.
 
 Writes the downloads to a specified directory.
