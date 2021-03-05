@@ -12,6 +12,9 @@ Writes the downloads to a specified directory.
 
 
 Python Dependencies
+
 python -m pip install requests
+
 python -m pip install bs4
+
 python -m pip install cookiejar
