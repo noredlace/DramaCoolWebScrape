@@ -9,3 +9,9 @@ Config.json is used to pass the URLs (as an array if there are multiple URLs to 
 Downloads with threads for each file in Python or don't and have it generate the Download Links.
 
 Writes the downloads to a specified directory.
+
+
+Python Dependencies
+python -m pip install requests
+python -m pip install bs4
+python -m pip install cookiejar
